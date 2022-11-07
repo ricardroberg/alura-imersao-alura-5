@@ -72,11 +72,6 @@
         "thumb": "https://img.youtube.com/vi/Yf0rC7dERjg/hqdefault.jpg"
       },
       {
-        "title": "Como Foi Programado um App Que Faz Mágica",
-        "url": "https://www.youtube.com/watch?v=I36seuWUe5s",
-        "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg"
-      },
-      {
         "title": "O que todo iniciante em Front End deveria aprender | Como manipular arrays e objetos em JavaScript",
         "url": "https://www.youtube.com/watch?v=yS7AcF-xRUg",
         "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg"
@@ -103,7 +98,6 @@
         "url": "https://www.youtube.com/watch?v=8q36rNS5yVo",
         "thumb": "https://img.youtube.com/vi/8q36rNS5yVo/hqdefault.jpg"
       },
-
       {
         "title": "O que é o Java? #HipstersPontoTube",
         "url": "https://www.youtube.com/watch?v=90NcVNsKGik",
@@ -123,11 +117,18 @@
         "title": "Top 5 libs que todo aplicativo Android deve ter com Alex Felipe | #HipstersPontoTube",
         "url": "https://www.youtube.com/watch?v=ldRbnpy-qQs",
         "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
-      },
+      }
+    ],
+    "favoritos": [
       {
         "title": "O que é o C#? #HipstersPontoTube",
         "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA",
         "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
+      },
+      {
+        "title": "Como Foi Programado um App Que Faz Mágica",
+        "url": "https://www.youtube.com/watch?v=I36seuWUe5s",
+        "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg"
       }
     ]
   }

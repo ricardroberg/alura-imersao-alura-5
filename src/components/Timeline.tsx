@@ -11,10 +11,12 @@ interface PlaylistsProps {
 }
 
 interface TimelineProps {
-    data: PlaylistsProps[]
+    //RESOLVER 
+    // data: PlaylistsProps[]
+    data: any
 }
 
-export function Timeline({ data }: TimelineProps) {
+export function Timeline({ data }: any) {
     // console.log("DENTRO DE DATA: ", data)
     const playlistNames = Object.keys(data)
 
