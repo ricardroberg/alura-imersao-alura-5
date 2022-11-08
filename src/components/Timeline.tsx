@@ -2,6 +2,8 @@ import Image from "next/image"
 import styled from "styled-components"
 import { Favorites } from "./Favorites"
 
+import cuuid from 'cuuid'
+
 interface PlaylistsProps {
     playlistName: {
         id: string
@@ -18,7 +20,7 @@ interface TimelineProps {
 }
 
 export function Timeline({ data }: any) {
-    console.log("DENTRO DE DATA: ", data)
+    // console.log("DENTRO DE DATA: ", data)
     const playlistNames = Object.keys(data)
 
     return (
@@ -29,7 +31,7 @@ export function Timeline({ data }: any) {
                     const videos = data[playlistName]
 
                     return (
-                        <section key={Math.random()}>
+                        <section key={cuuid()}>
                             <h2>{playlistName}</h2>
                             <div>
                                 {videos.map((video: any) => {
@@ -45,12 +47,9 @@ export function Timeline({ data }: any) {
                                             </a>
                                         )
                                     } else {
+                                        console.log("GITHUB ", video.github)
                                         return (
-
-                                            <Favorites
-                                                key={Math.random()}
-                                                data={video.github}
-                                                playlistName={playlistName} />
+                                            <Favorites key={cuuid()} data={video.github} />
                                         )
                                     }
                                 })}

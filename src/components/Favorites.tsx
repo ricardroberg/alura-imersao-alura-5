@@ -2,23 +2,21 @@ import React from 'react'
 import Image from "next/image"
 import styled from 'styled-components'
 
-interface FavoritesProps {
-    playlistName: string
-    data: string
+import cuuid from 'cuuid'
 
+interface FavoritesProps {
+    data: string
 }
 
-export function Favorites({ playlistName, data }: FavoritesProps): JSX.Element {
+export function Favorites({ data }: FavoritesProps) {
     const logoImage = `https://github.com/${data}.png`
-    console.log("PLAYLISTNAME ", playlistName)
+    console.log("PLAYLISTNAME ", data)
     // console.log("DATA ", data)
 
     return (
 
-        <FavoritesContainer
-            key={data}
-        >
-            <Image src={logoImage} width={100} height={100} alt="Video Thumbnail" />
+        <FavoritesContainer key={cuuid()}>
+            <Image src={logoImage} alt='My thumb' width={80} height={80} />
             <span>
                 @{data}
             </span>
@@ -32,6 +30,6 @@ display: grid;
 
 img {
         border: 3px solid gray;
-    /* border-radius: 30%; */
+    border-radius: 30%;
 }
 `

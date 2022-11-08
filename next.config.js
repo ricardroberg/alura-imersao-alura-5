@@ -5,9 +5,10 @@ const nextConfig = {
   images: {
     domains: [
       "github.com",
-      "www.youtube.com",
       "youtube.com",
+      "www.youtube.com",
       "img.youtube.com",
+      "images.unsplash.com",
     ],
   },
 };

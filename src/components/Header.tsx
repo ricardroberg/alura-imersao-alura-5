@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import { Url } from 'url'
 
 import config from '../../config.json'
 
@@ -12,7 +11,6 @@ export function Header() {
 
     return (
         <StyledHeader banner={banner}>
-            {/* <img src="banner" alt="" /> */}
             <section className='user-info'>
                 <Image src={logoImage} alt='My thumb' width={80} height={80} />
                 <div>
@@ -26,7 +24,7 @@ export function Header() {
     )
 }
 
-const StyledHeader = styled.div<{ banner }>`
+const StyledHeader = styled.div<{ banner: string }>`
 margin-top: 70px;
 color: white;
 
@@ -39,11 +37,11 @@ img {
     outline: 3px solid white ;
     }
 
-    .user-info{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        padding: 16px 32px;
-        gap: 16px;
-    }
+.user-info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 32px;
+    gap: 16px;
+}
 `
