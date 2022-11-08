@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styled from "styled-components"
+import { Favorites } from "./Favorites"
 
 interface PlaylistsProps {
     playlistName: {
@@ -17,7 +18,7 @@ interface TimelineProps {
 }
 
 export function Timeline({ data }: any) {
-    // console.log("DENTRO DE DATA: ", data)
+    console.log("DENTRO DE DATA: ", data)
     const playlistNames = Object.keys(data)
 
     return (
@@ -26,24 +27,32 @@ export function Timeline({ data }: any) {
             {
                 playlistNames.map((playlistName) => {
                     const videos = data[playlistName]
-                    // console.log(playlistName)
-                    // console.log(videos)
 
                     return (
                         <section key={Math.random()}>
                             <h2>{playlistName}</h2>
                             <div>
                                 {videos.map((video: any) => {
-                                    return (
-                                        <a
-                                            key={video.url}
-                                            href={video.url}>
-                                            <Image src={video.thumb} width={100} height={100} alt="Video Thumbnail" />
-                                            <span>
-                                                {video.title}
-                                            </span>
-                                        </a>
-                                    )
+                                    if (playlistName !== 'favoritos') {
+                                        return (
+                                            <a
+                                                key={video.url}
+                                                href={video.url}>
+                                                <Image src={video.thumb} width={100} height={100} alt="Video Thumbnail" />
+                                                <span>
+                                                    {video.title}
+                                                </span>
+                                            </a>
+                                        )
+                                    } else {
+                                        return (
+
+                                            <Favorites
+                                                key={Math.random()}
+                                                data={video.github}
+                                                playlistName={playlistName} />
+                                        )
+                                    }
                                 })}
                             </div>
                         </section>

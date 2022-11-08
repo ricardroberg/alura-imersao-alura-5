@@ -1,1 +1,3 @@
-# Fica pra próxima
+# AluraTube by Alura
+
+### com Typescript
