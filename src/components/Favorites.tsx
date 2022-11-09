@@ -9,7 +9,7 @@ interface FavoritesProps {
 }
 
 export function Favorites({ data }: FavoritesProps): JSX.Element {
-  console.log("DATA ", typeof data);
+
 
   return (
     <MainFavoriteContainer>
