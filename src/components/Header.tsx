@@ -5,12 +5,11 @@ import config from '../../config.json'
 
 export function Header() {
 
-    const banner = "https://images.unsplash.com/photo-1540655037529-dec987208707?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1221&q=80"
-
     const logoImage = `https://github.com/${config.github}.png`
 
     return (
-        <StyledHeader banner={banner}>
+        <StyledHeader banner={config.bg}>
+            <StyledBanner/>
             <section className='user-info'>
                 <Image src={logoImage} alt='My thumb' width={80} height={80} />
                 <div>
@@ -25,7 +24,7 @@ export function Header() {
 }
 
 const StyledHeader = styled.div<{ banner: string }>`
-margin-top: 70px;
+margin-top: 55px;
 color: white;
 
 section{
@@ -44,4 +43,9 @@ img {
     padding: 16px 32px;
     gap: 16px;
 }
+`
+
+
+const StyledBanner = styled.div`
+  
 `

@@ -17,9 +17,10 @@ interface TimelineProps {
     //RESOLVER 
     // data: PlaylistsProps[]
     data: any
+    searchValue: string
 }
 
-export function Timeline({ data }: any) {
+export function Timeline({ data, searchValue, ...rest }: any) {
     // console.log("DENTRO DE DATA: ", data)
     const playlistNames = Object.keys(data)
 
@@ -34,13 +35,18 @@ export function Timeline({ data }: any) {
                         <section key={cuuid()}>
                             <h2>{playlistName}</h2>
                             <div>
-                                {videos.map((video: any) => {
+                                {videos.filter((video: any) => {
+                                    const titleNormalized = video.title?.toLowerCase()
+                                    const searchValueNormalized = searchValue.toLowerCase()
+
+                                    return titleNormalized?.includes(searchValueNormalized)
+                                }).map((video: any) => {
                                     if (playlistName !== 'favoritos') {
                                         return (
                                             <a
                                                 key={video.url}
                                                 href={video.url}>
-                                                <Image src={video.thumb} width={100} height={100} alt="Video Thumbnail" />
+                                                <Image src={video.thumb} width={100} height={100} alt="asdasd Thumbnail" />
                                                 <span>
                                                     {video.title}
                                                 </span>

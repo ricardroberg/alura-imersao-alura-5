@@ -1,3 +1,6 @@
 # AluraTube by Alura
 
-### com Typescript
+
+[X] Typescript
+
+[ ] Resolver algumas tipagens

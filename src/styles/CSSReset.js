@@ -27,12 +27,14 @@ export const CSSReset = createGlobalStyle`
   /* Globals */
   button,
   a {
+    flex: 1;
     text-decoration: none;
     opacity: 1;
     transition: .3s;
     &:hover,
     &:focus {
       opacity: .5;
+      flex: 1;
     }
   }
 `;
