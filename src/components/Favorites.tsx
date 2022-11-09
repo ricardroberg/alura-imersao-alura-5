@@ -5,7 +5,7 @@ import React from "react";
 import cuuid from "cuuid";
 
 interface FavoritesProps {
-  data: Object[];
+  data: { github: string }[]
 }
 
 export function Favorites({ data }: FavoritesProps): JSX.Element {
@@ -14,9 +14,10 @@ export function Favorites({ data }: FavoritesProps): JSX.Element {
   return (
     <MainFavoriteContainer>
       <section>
-        <h2>unforgedTube Favoritos!</h2>
+        <h2>unforgedTube Favoritos</h2>
         <div className="imageContainer">
           {data.map((e) => {
+            console.log(e)
             return (
               <div key={cuuid()}>
                 <div>
