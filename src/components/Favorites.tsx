@@ -14,7 +14,7 @@ export function Favorites({ data }: FavoritesProps): JSX.Element {
   return (
     <MainFavoriteContainer>
       <section>
-        <h2>unforgedTube Favoritos</h2>
+        <h2>unforgedTube Favoritos!</h2>
         <div className="imageContainer">
           {data.map((e) => {
             return (
