@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 
+interface SearchProps {
+  valorDoFiltro: string
+  setValorDoFiltro: ((e: String) => string)
+}
 
-
-export function Search({ valorDoFiltro, setValorDoFiltro }: any) {
-  // const [valorDaBusca, setValorDaBusca] = React.useState("");
-  // console.log("Search", valorDaBusca)
+export function Search({ valorDoFiltro, setValorDoFiltro }: SearchProps) {
   const valorDaBusca = valorDoFiltro;
   const setValorDaBusca = setValorDoFiltro;
 

@@ -23,6 +23,8 @@ interface TimelineProps {
 export function Timeline({ data, searchValue, ...rest }: any) {
     // console.log("DENTRO DE DATA: ", data)
     const playlistNames = Object.keys(data)
+    // const favorites = Object.values(data["unforgedTube Favoritos"])
+    // console.log("FAVORITOS", favorites[0].github)
 
     return (
 
@@ -30,9 +32,10 @@ export function Timeline({ data, searchValue, ...rest }: any) {
             {
                 playlistNames.map((playlistName) => {
                     const videos = data[playlistName]
+                    // const favorites = data["unforgedTube Favoritos"]
 
                     return (
-                        <section key={cuuid()}>
+                        <section key={cuuid()} className={playlistName.split(' ')[0]}>
                             <h2>{playlistName}</h2>
                             <div>
                                 {videos.filter((video: any) => {
@@ -41,24 +44,25 @@ export function Timeline({ data, searchValue, ...rest }: any) {
 
                                     return titleNormalized?.includes(searchValueNormalized)
                                 }).map((video: any) => {
-                                    if (playlistName !== 'favoritos') {
+                                    // if (playlistName !== 'favoritos') {
                                         return (
                                             <a
                                                 key={video.url}
                                                 href={video.url}>
-                                                <Image src={video.thumb} width={100} height={100} alt="asdasd Thumbnail" />
+                                                <Image src={video.thumb} width={100} height={100} alt="Vide Thumbnail" />
                                                 <span>
                                                     {video.title}
                                                 </span>
+                                                <span>{video.github}</span>
                                             </a>
                                         )
-                                    } else {
-                                        console.log("GITHUB ", video.github)
-                                        return (
-                                            <Favorites key={cuuid()} data={video.github} />
-                                        )
                                     }
-                                })}
+                                // },
+                                //     favorites.map((favorite, value) => {
+                                //         console.log(favorites[value]?.github, value)
+                                //         return <Favorites key={cuuid()} data={favorite[value]?.github} />
+                                //     })
+                                )}
                             </div>
                         </section>
                     )

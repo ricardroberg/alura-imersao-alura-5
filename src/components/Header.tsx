@@ -6,10 +6,8 @@ import config from '../../config.json'
 export function Header() {
 
     const logoImage = `https://github.com/${config.github}.png`
-
     return (
         <StyledHeader banner={config.bg}>
-            <StyledBanner/>
             <section className='user-info'>
                 <Image src={logoImage} alt='My thumb' width={80} height={80} />
                 <div>
@@ -28,7 +26,11 @@ margin-top: 55px;
 color: white;
 
 section{
-    background-image: url(${props => props.banner});
+    background: url(${props => props.banner})  no-repeat center ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 img {
@@ -43,9 +45,4 @@ img {
     padding: 16px 32px;
     gap: 16px;
 }
-`
-
-
-const StyledBanner = styled.div`
-  
 `

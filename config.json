@@ -2,7 +2,18 @@
   "name": "Ricard Roberg (Unforged)",
   "description": "Front-End Dev Intern",
   "github": "ricardroberg",
-  "bg": "https://images.unsplash.com/photo-1540655037529-dec987208707?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1221&q=80",
+  "bg": "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80",
+  "unforgedTube Favoritos": [
+    {
+      "github": "ricardroberg"
+    },
+    {
+      "github": "omariosouto"
+    },
+    {
+      "github": "peas"
+    }
+  ],
   "playlists": {
     "jogos": [
       {
@@ -118,17 +129,6 @@
         "title": "Top 5 libs que todo aplicativo Android deve ter com Alex Felipe | #HipstersPontoTube",
         "url": "https://www.youtube.com/watch?v=ldRbnpy-qQs",
         "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
-      }
-    ],
-    "AluraTubes Favoritos": [
-      {
-        "github": "ricardroberg"
-      },
-      {
-        "github": "omariosouto"
-      },
-      {
-        "github": "peas"
       }
     ]
   }
