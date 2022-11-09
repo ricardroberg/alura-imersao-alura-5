@@ -21,10 +21,8 @@ interface TimelineProps {
 }
 
 export function Timeline({ data, searchValue, ...rest }: any) {
-    // console.log("DENTRO DE DATA: ", data)
+
     const playlistNames = Object.keys(data)
-    // const favorites = Object.values(data["unforgedTube Favoritos"])
-    // console.log("FAVORITOS", favorites[0].github)
 
     return (
 
@@ -32,7 +30,6 @@ export function Timeline({ data, searchValue, ...rest }: any) {
             {
                 playlistNames.map((playlistName) => {
                     const videos = data[playlistName]
-                    // const favorites = data["unforgedTube Favoritos"]
 
                     return (
                         <section key={cuuid()} className={playlistName.split(' ')[0]}>
@@ -44,7 +41,6 @@ export function Timeline({ data, searchValue, ...rest }: any) {
 
                                     return titleNormalized?.includes(searchValueNormalized)
                                 }).map((video: any) => {
-                                    // if (playlistName !== 'favoritos') {
                                         return (
                                             <a
                                                 key={video.url}
@@ -57,11 +53,6 @@ export function Timeline({ data, searchValue, ...rest }: any) {
                                             </a>
                                         )
                                     }
-                                // },
-                                //     favorites.map((favorite, value) => {
-                                //         console.log(favorites[value]?.github, value)
-                                //         return <Favorites key={cuuid()} data={favorite[value]?.github} />
-                                //     })
                                 )}
                             </div>
                         </section>
