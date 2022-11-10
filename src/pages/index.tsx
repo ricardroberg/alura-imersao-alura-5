@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Head from 'next/head'
 import cuuid from 'cuuid'
 
@@ -21,24 +21,24 @@ export default function Home() {
   const [isDarkTheme, setIsDarkTheme] = useState(false)
   const [valorDoFiltro, setValorDoFiltro] = useState<MenuProps | ''>('')
 
+
   const favorites = config["unforgedTube Favoritos"]
   const colors = { COLORS }
   return (
-    <>
-      <button onChange={() => setIsDarkTheme(true)} />
-      <Head>
-        <title>unforgedTube</title>
-      </Head>
-      <CSSReset />
-      <MainContainer>
-        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
-        <Header />
-        <Timeline searchValue={valorDoFiltro} data={config.playlists}>
-          Conteúdo
-        </Timeline>
-        <Favorites key={cuuid()} data={favorites} />
-      </MainContainer>
-    </>
+      <>
+        <Head>
+          <title>unforgedTube</title>
+        </Head>
+        <CSSReset />
+        <MainContainer>
+          <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
+          <Header />
+          <Timeline searchValue={valorDoFiltro} data={config.playlists}>
+            Conteúdo
+          </Timeline>
+          <Favorites key={cuuid()} data={favorites} />
+        </MainContainer>
+      </>
   )
 }
 
