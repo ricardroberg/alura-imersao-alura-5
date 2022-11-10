@@ -10,6 +10,7 @@ import { Menu } from "../components/Menu";
 
 import { CSSReset } from '../styles/CSSReset'
 import config from '../../config.json'
+import { COLORS } from '../assets/styles/globalVariables'
 
 interface MenuProps {
   valorDoFiltro: string
@@ -17,12 +18,14 @@ interface MenuProps {
 }
 
 export default function Home() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
   const [valorDoFiltro, setValorDoFiltro] = useState<MenuProps | ''>('')
 
   const favorites = config["unforgedTube Favoritos"]
-
+  const colors = { COLORS }
   return (
     <>
+      <button onChange={() => setIsDarkTheme(true)} />
       <Head>
         <title>unforgedTube</title>
       </Head>
