@@ -17,7 +17,6 @@ export function Favorites({ data }: FavoritesProps): JSX.Element {
         <h2>unforgedTube Favoritos</h2>
         <div className="imageContainer">
           {data.map((e) => {
-            console.log(e)
             return (
               <div key={cuuid()}>
                 <div>
@@ -59,14 +58,14 @@ overflow: hidden;
 
     img {
         border-radius: 50%;
-        outline: 3px solid #343434;
+        outline: 3px solid ${props => props.theme.borderBase};;
     }
     span{
         padding-top: 8px;
         display: block;
         font-size: 12px;
         font-weight: 900;
-        color: #858383;
+        color: ${props => props.theme.textColorBase};
         text-align: center;
     }
 }
@@ -75,4 +74,5 @@ h2 {
     font-size: 16px;
     margin-bottom: 16px;
     text-transform: capitalize;
+    color: ${props => props.theme.textColorBase};
 `;

@@ -2,14 +2,21 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+import Switch, { SwitchProps } from '@mui/material/Switch';
 
-export function CustomSwitch() {
+interface CustomSwitchProps extends SwitchProps {
+    changeTheme: () => void
+}
+
+export function CustomSwitch({ changeTheme }: CustomSwitchProps) {
     return (
-        <FormGroup>
+        <FormGroup
+            onChange={changeTheme}
+        >
             <FormControlLabel
                 control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-                label="MUI switch"
+                label=""
+
             />
         </FormGroup>
     );
@@ -19,6 +26,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
     padding: 7,
+    size: 'small',
     '& .MuiSwitch-switchBase': {
         margin: 1,
         padding: 0,
@@ -38,7 +46,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         },
     },
     '& .MuiSwitch-thumb': {
-        backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+        backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#013366',
         width: 32,
         height: 32,
         '&:before': {

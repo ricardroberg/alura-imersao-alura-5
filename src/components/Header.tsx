@@ -10,6 +10,7 @@ export function Header() {
         <StyledHeader banner={config.bg}>
             <section className='user-info'>
                 <Image src={logoImage} alt='My thumb' width={80} height={80} />
+               
                 <div>
                     <h2>
                         {config.name}
@@ -22,7 +23,7 @@ export function Header() {
 }
 
 const StyledHeader = styled.div<{ banner: string }>`
-margin-top: 55px;
+margin-top: 75px;
 color: white;
 
 section{

@@ -1,6 +1,5 @@
 import Image from "next/image"
 import styled from "styled-components"
-import { Favorites } from "./Favorites"
 
 import cuuid from 'cuuid'
 
@@ -41,18 +40,18 @@ export function Timeline({ data, searchValue, ...rest }: any) {
 
                                     return titleNormalized?.includes(searchValueNormalized)
                                 }).map((video: any) => {
-                                        return (
-                                            <a
-                                                key={video.url}
-                                                href={video.url}>
-                                                <Image src={video.thumb} width={100} height={100} alt="Vide Thumbnail" />
-                                                <span>
-                                                    {video.title}
-                                                </span>
-                                                <span>{video.github}</span>
-                                            </a>
-                                        )
-                                    }
+                                    return (
+                                        <a
+                                            key={video.url}
+                                            href={video.url}>
+                                            <Image src={video.thumb} width={100} height={100} alt="Vide Thumbnail" />
+                                            <span>
+                                                {video.title}
+                                            </span>
+                                            <span>{video.github}</span>
+                                        </a>
+                                    )
+                                }
                                 )}
                             </div>
                         </section>
@@ -72,6 +71,7 @@ export const StyledTimeline = styled.div`
     font-size: 16px;
     margin-bottom: 16px;
     text-transform: capitalize;
+    color: ${props => props.theme.textColorBase};
   }
   img {
     aspect-ratio: 16/9;
@@ -80,7 +80,7 @@ export const StyledTimeline = styled.div`
     width: 100%;
     max-width: 210px;
     height: auto;
-    border: 3px solid gray;
+    border: 3px solid ${props => props.theme.borderBase};
     border-radius: 4px;
   }
   section {
@@ -107,10 +107,9 @@ export const StyledTimeline = styled.div`
           padding-top: 8px;
           display: block;
           padding-right: 24px;
-          color: ${({ theme }) => theme.textColorBase || "#222222"};
+          color: ${props => props.theme.textColorBase};
           font-size: 12px;
           font-weight: 600;
-          color: #858383;
         }
       }
     }

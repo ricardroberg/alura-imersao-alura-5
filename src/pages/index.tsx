@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { createContext, useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { useState } from "react";
 import Head from 'next/head'
 import cuuid from 'cuuid'
 
@@ -8,9 +8,10 @@ import { Timeline } from "../components/Timeline";
 import { Header } from "../components/Header";
 import { Menu } from "../components/Menu";
 
-import { CSSReset } from '../styles/CSSReset'
+import { GlobalStyle } from '../styles/global'
 import config from '../../config.json'
-import { COLORS } from '../assets/styles/globalVariables'
+import { lightTheme, darkTheme } from "../styles/themes/themes";
+import { CustomSwitch } from "../assets/components/CustomSwitch";
 
 interface MenuProps {
   valorDoFiltro: string
@@ -18,31 +19,37 @@ interface MenuProps {
 }
 
 export default function Home() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false)
+  const [theme, setTheme] = useState(lightTheme)
   const [valorDoFiltro, setValorDoFiltro] = useState<MenuProps | ''>('')
 
-
   const favorites = config["unforgedTube Favoritos"]
-  const colors = { COLORS }
+
+  function handleThemeChange() {
+    setTheme(theme == darkTheme ? lightTheme : darkTheme)
+    console.log("SETTHEME", theme)
+  }
+
+
   return (
-      <>
-        <Head>
-          <title>unforgedTube</title>
-        </Head>
-        <CSSReset />
-        <MainContainer>
-          <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
-          <Header />
-          <Timeline searchValue={valorDoFiltro} data={config.playlists}>
-            Conteúdo
-          </Timeline>
-          <Favorites key={cuuid()} data={favorites} />
-        </MainContainer>
-      </>
+    <ThemeProvider theme={theme}>
+      <Head>
+        <title>unforgedTube</title>
+      </Head>
+      <GlobalStyle />
+      <MainContainer>
+        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}  changeTheme={() => handleThemeChange()} />
+        <Header />
+        <Timeline searchValue={valorDoFiltro} data={config.playlists}>
+          Conteúdo
+        </Timeline>
+        <Favorites key={cuuid()} data={favorites} />
+      </MainContainer>
+    </ThemeProvider>
   )
 }
 
 const MainContainer = styled.div`
+background-color: ${props => props.theme.backgroundBase};
   display: flex;
   flex-direction: column;
   flex: 1;
