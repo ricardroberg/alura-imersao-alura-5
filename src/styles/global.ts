@@ -7,9 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  body {
-    font-family: sans-serif;
-  }
+
   /* NextJS */
   html {
     display: flex;
@@ -17,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
   }
   body {
+    font-family: sans-serif;
     display: flex;
     flex: 1;
   }
@@ -37,4 +36,15 @@ export const GlobalStyle = createGlobalStyle`
       flex: 1;
     }
   }
-`
+  ::-webkit-scrollbar {
+    height: 8px;               /* width of the entire scrollbar */
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #ccc9c9;
+    border-radius: 25px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888686;
+    border-radius: 25px;
+  }
+`;

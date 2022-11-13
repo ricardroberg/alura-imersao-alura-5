@@ -37,7 +37,7 @@ export default function Home() {
       </Head>
       <GlobalStyle />
       <MainContainer>
-        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}  changeTheme={() => handleThemeChange()} />
+        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} changeTheme={() => handleThemeChange()} />
         <Header />
         <Timeline searchValue={valorDoFiltro} data={config.playlists}>
           Conteúdo
@@ -53,4 +53,5 @@ background-color: ${props => props.theme.backgroundBase};
   display: flex;
   flex-direction: column;
   flex: 1;
+
 `
